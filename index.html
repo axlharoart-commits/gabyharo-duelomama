@@ -1,0 +1,341 @@
+<meta charset="UTF-8">
+<title>Guía emocional para el duelo de mamá — Psic. Gaby Haro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Petit+Formal+Script&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          plum: { DEFAULT: '#22072B' },
+          wine: { DEFAULT: '#7D3B49', dark: '#5F2C37', darker: '#432028', light: '#9C5563' },
+          blush: { DEFAULT: '#F3E1DA', light: '#FBF4EE', mid: '#F7E9E2', dark: '#EAD2C8' },
+          rose: { DEFAULT: '#C98B95', light: '#EBCED0', pale: '#F3DEDD' },
+          pink: { DEFAULT: '#E14C7C', dark: '#C23566', light: '#F5A9C4' },
+          ink: { DEFAULT: '#4A3538', soft: '#7A5F62' },
+          gold: '#C9A227',
+        },
+        fontFamily: {
+          serif: ['"Playfair Display"', 'serif'],
+          script: ['"Petit Formal Script"', 'cursive'],
+          sans: ['"Quicksand"', 'sans-serif'],
+        },
+        boxShadow: {
+          soft: '0 10px 30px -10px rgba(125,59,73,0.25)',
+          card: '0 20px 40px -18px rgba(125,59,73,0.22)',
+          float: '0 25px 50px -12px rgba(93,44,55,0.35)',
+        },
+        transitionTimingFunction: {
+          spring: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Quicksand', sans-serif; font-weight: 500; color: #4A3538; background: #FBF4EE; }
+  h1, h2, h3, .font-display { font-family: 'Playfair Display', serif; }
+  .script { font-family: 'Petit Formal Script', cursive; }
+  .grain { position: relative; }
+  .grain::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  }
+  .shine-btn { position: relative; overflow: hidden; animation: pulse-grow 1.8s ease-in-out infinite; }
+  .shine-btn::after {
+    content: ""; position: absolute; top: -20%; left: 0; width: 45%; height: 140%;
+    background: linear-gradient(115deg, transparent 20%, rgba(255,255,255,0.55) 50%, transparent 80%);
+    transform: translateX(-260%) skewX(-18deg);
+    animation: shine-sweep 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes shine-sweep {
+    0% { transform: translateX(-260%) skewX(-18deg); }
+    35% { transform: translateX(310%) skewX(-18deg); }
+    100% { transform: translateX(310%) skewX(-18deg); }
+  }
+  @keyframes pulse-grow {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.045); }
+  }
+</style>
+
+<!-- decorative sprite -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M4 12.5l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 6.2c-1.6-1.3-3.7-1.9-6.3-1.9v13.4c2.6 0 4.7.6 6.3 1.9 1.6-1.3 3.7-1.9 6.3-1.9V4.3c-2.6 0-4.7.6-6.3 1.9Z"/>
+    <path d="M12 6.2v13.4"/>
+  </symbol>
+  <symbol id="ic-notebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4.5" y="3.5" width="12.5" height="17" rx="1.8"/>
+    <path d="M4.5 7.7h12.5M4.5 11.2h8.5M4.5 14.7h6"/>
+    <path d="M15.3 16.2l4-4 2.1 2.1-4 4h-2.1v-2.1Z"/>
+  </symbol>
+  <symbol id="ic-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3.5a8.5 8.5 0 0 0-7.3 12.8L3.5 20.5l4.3-1.1A8.5 8.5 0 1 0 12 3.5Z"/>
+    <path d="M8.7 8.4c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.4.2.5.6 1.5.7 1.6.1.1.1.3 0 .5-.1.2-.2.3-.3.5-.2.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.2.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.4.2.5.3.1.2.1.9-.2 1.4-.3.5-1.4 1.1-2 1.1-.5 0-1.2 0-3.2-.9-2.4-1.1-3.9-3.5-4.1-3.7-.2-.2-1.3-1.7-1.3-3.2 0-1.5.8-2.2 1.1-2.5Z" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="ic-heart" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 20s-7.5-4.6-10-9.3C.4 7 2.1 3.5 5.6 3c2.1-.3 4.1.8 6.4 3 2.3-2.2 4.3-3.3 6.4-3 3.5.5 5.2 4 3.6 7.7C19.5 15.4 12 20 12 20Z"/>
+  </symbol>
+  <symbol id="ic-heart-o" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 20s-7.5-4.6-10-9.3C.4 7 2.1 3.5 5.6 3c2.1-.3 4.1.8 6.4 3 2.3-2.2 4.3-3.3 6.4-3 3.5.5 5.2 4 3.6 7.7C19.5 15.4 12 20 12 20Z"/>
+  </symbol>
+  <symbol id="blossom-branch" viewBox="0 0 220 220" fill="none">
+    <path d="M15 210 C 45 165 35 120 65 90 C 95 60 85 35 115 18" stroke="#D9B8BC" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M65 90 C 52 82 38 82 27 90" stroke="#D9B8BC" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+    <path d="M88 58 C 100 48 114 48 123 57" stroke="#D9B8BC" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+    <g stroke="#E3A9B4" stroke-width="1" fill="none" opacity="0.85">
+      <circle cx="27" cy="90" r="6"/>
+      <circle cx="37" cy="84" r="6"/>
+      <circle cx="32" cy="75" r="6"/>
+      <circle cx="21" cy="78" r="6"/>
+      <circle cx="18" cy="89" r="6"/>
+    </g>
+    <g stroke="#E3A9B4" stroke-width="1" fill="none" opacity="0.85">
+      <circle cx="123" cy="57" r="5"/>
+      <circle cx="131" cy="51" r="5"/>
+      <circle cx="127" cy="43" r="5"/>
+      <circle cx="118" cy="45" r="5"/>
+      <circle cx="115" cy="55" r="5"/>
+    </g>
+    <g stroke="#E3A9B4" stroke-width="1" fill="none" opacity="0.85">
+      <circle cx="115" cy="18" r="4.5"/>
+      <circle cx="122" cy="13" r="4.5"/>
+      <circle cx="119" cy="6" r="4.5"/>
+      <circle cx="109" cy="8" r="4.5"/>
+      <circle cx="107" cy="17" r="4.5"/>
+    </g>
+  </symbol>
+  <symbol id="lavender-sprig" viewBox="0 0 60 150" fill="none">
+    <path d="M30 148 C 28 110 32 80 30 30" stroke="#8B8564" stroke-width="2" stroke-linecap="round"/>
+    <g fill="#AE9BD1">
+      <ellipse cx="30" cy="26" rx="4.5" ry="8"/>
+      <ellipse cx="23" cy="36" rx="4.2" ry="7.5" transform="rotate(-22 23 36)"/>
+      <ellipse cx="37" cy="36" rx="4.2" ry="7.5" transform="rotate(22 37 36)"/>
+      <ellipse cx="25" cy="48" rx="4" ry="7" transform="rotate(-16 25 48)"/>
+      <ellipse cx="35" cy="48" rx="4" ry="7" transform="rotate(16 35 48)"/>
+      <ellipse cx="30" cy="58" rx="4" ry="7"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- ============ APERTURA ============ -->
+<section class="relative overflow-hidden bg-blush-light pt-14 pb-6 md:pt-20 md:pb-8">
+  <svg class="absolute -left-6 -top-6 w-32 md:w-48 opacity-70 pointer-events-none" viewBox="0 0 220 220"><use href="#blossom-branch"/></svg>
+  <svg class="absolute -right-8 -bottom-10 w-28 md:w-40 opacity-40 pointer-events-none rotate-[155deg]" viewBox="0 0 220 220"><use href="#blossom-branch"/></svg>
+
+  <div class="relative max-w-3xl mx-auto px-6 text-center">
+    <svg class="w-6 h-6 mx-auto mb-2 text-wine-dark"><use href="#ic-heart"/></svg>
+    <img src="brand_assets/Logo.png" alt="Psic. Gaby Haro" class="mx-auto w-56 sm:w-64 md:w-80 mb-8">
+    <h1 class="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.15] tracking-[-0.02em] text-plum">
+      Guía emocional para el duelo de mamá
+    </h1>
+    <p class="mt-5 text-ink-soft text-base md:text-lg leading-[1.7] max-w-xl mx-auto">
+      Una guía creada para ayudarte a comprender mejor tu proceso, validar lo que sientes y transitar el duelo con mayor claridad y compasión.
+    </p>
+  </div>
+</section>
+
+<!-- ============ VIDEO VSL ============ -->
+<section class="relative overflow-hidden bg-blush-light pb-10 md:pb-14">
+  <svg class="absolute -right-4 top-0 w-24 md:w-32 opacity-45 pointer-events-none rotate-[95deg]" viewBox="0 0 220 220"><use href="#blossom-branch"/></svg>
+
+  <div class="relative max-w-3xl mx-auto px-6">
+    <div class="relative rounded-[28px] bg-white shadow-float p-2 md:p-3">
+      <video id="vslVideo" class="w-full aspect-video block rounded-[22px]" controls playsinline autoplay muted preload="auto">
+        <source src="brand_assets/VSL.mp4" type="video/mp4">
+      </video>
+      <button id="unmuteBtn" onclick="unmuteVSL(this)" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 inline-flex items-center gap-3 bg-white/95 text-ink font-semibold text-base md:text-xl px-7 py-4 md:px-9 md:py-5 rounded-full shadow-float hover:bg-white hover:scale-105 active:scale-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink transition-transform duration-300 ease-spring animate-pulse">
+        🔊 Toca para activar el sonido
+      </button>
+    </div>
+  </div>
+</section>
+<script>
+  function unmuteVSL(btn) {
+    const v = document.getElementById('vslVideo');
+    v.muted = false;
+    v.volume = 1;
+    v.play();
+    btn.style.display = 'none';
+  }
+</script>
+
+<!-- ============ CTA 1 ============ -->
+<div class="bg-blush-light px-6 py-10 md:py-14 flex justify-center">
+  <a href="#kit" class="shine-btn max-w-md w-full sm:w-auto text-center inline-flex items-center justify-center gap-3 bg-gradient-to-r from-pink to-pink-dark text-blush-light font-semibold text-base md:text-lg px-8 py-5 rounded-2xl shadow-float hover:-translate-y-1 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink transition-transform duration-300 ease-spring leading-snug">
+    <svg class="w-5 h-5 shrink-0"><use href="#ic-heart-o"/></svg>
+    Quiero el kit de acompañamiento para el duelo de mamá
+  </a>
+</div>
+
+<!-- ============ INFORMACIÓN DEL KIT ============ -->
+<section id="kit" class="relative overflow-hidden bg-blush-mid py-16 md:py-24">
+  <div class="relative max-w-2xl mx-auto px-6">
+    <img src="brand_assets/kit.jpg" alt="Kit de acompañamiento para el duelo de mamá" class="w-full max-w-md mx-auto rounded-2xl shadow-float grain mb-14 block">
+
+    <div class="flex items-center justify-center gap-4 mb-10">
+      <span class="h-px w-10 md:w-16 bg-rose/40"></span>
+      <h2 class="font-display text-2xl md:text-3xl text-plum text-center tracking-[-0.02em]">Este acompañamiento incluye:</h2>
+      <span class="h-px w-10 md:w-16 bg-rose/40"></span>
+    </div>
+
+    <div class="rounded-[28px] bg-blush-light shadow-card p-6 md:p-10">
+      <div class="md:flex md:items-start md:gap-8">
+        <div class="relative shrink-0 mx-auto md:mx-0 mb-6 md:mb-0 w-fit">
+          <span class="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-rose-pale text-wine shadow-soft">
+            <svg class="w-9 h-9 md:w-10 md:h-10"><use href="#ic-book"/></svg>
+          </span>
+          <svg class="absolute -left-4 -bottom-6 w-8 h-16 opacity-80 pointer-events-none hidden sm:block"><use href="#lavender-sprig"/></svg>
+        </div>
+        <div class="flex-1 text-center md:text-left">
+          <h3 class="font-display text-xl md:text-2xl text-plum mb-2">Guía emocional para el duelo de mamá</h3>
+          <p class="text-ink-soft leading-[1.7]">
+            Una guía creada para ayudarte a comprender mejor tu proceso, validar lo que sientes y transitar el duelo con mayor claridad y compasión.
+          </p>
+          <p class="mt-4 font-semibold text-wine-darker">En ella encontrarás:</p>
+          <ul class="mt-3 space-y-3 text-left">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-rose"><use href="#ic-heart-o"/></svg>
+              <span class="text-ink-soft text-sm md:text-base leading-relaxed">Reflexiones para comprender las emociones que aparecen durante el duelo.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-rose"><use href="#ic-heart-o"/></svg>
+              <span class="text-ink-soft text-sm md:text-base leading-relaxed">Herramientas para atravesar momentos de tristeza, culpa, enojo o vacío.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-rose"><use href="#ic-heart-o"/></svg>
+              <span class="text-ink-soft text-sm md:text-base leading-relaxed">Orientación para afrontar recuerdos, fechas difíciles y asuntos pendientes con mamá.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="my-10 border-t border-dashed border-rose/30"></div>
+
+      <div class="md:flex md:items-start md:gap-8">
+        <div class="relative shrink-0 mx-auto md:mx-0 mb-6 md:mb-0 w-fit">
+          <span class="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-rose-pale text-wine shadow-soft">
+            <svg class="w-9 h-9 md:w-10 md:h-10"><use href="#ic-notebook"/></svg>
+          </span>
+          <svg class="absolute -left-4 -bottom-6 w-8 h-16 opacity-80 pointer-events-none hidden sm:block"><use href="#lavender-sprig"/></svg>
+        </div>
+        <div class="flex-1 text-center md:text-left">
+          <h3 class="font-display text-xl md:text-2xl text-plum mb-2">Cuaderno de ejercicios para trabajar tu duelo</h3>
+          <p class="text-ink-soft leading-[1.7]">
+            Este cuaderno es una de las partes más importantes del acompañamiento, porque te ayudará a poner en palabras lo que estás viviendo y a procesarlo poco a poco.
+          </p>
+          <p class="mt-4 font-semibold text-wine-darker">Incluye ejercicios para trabajar:</p>
+          <ul class="mt-3 space-y-3 text-left">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-rose"><use href="#ic-heart-o"/></svg>
+              <span class="text-ink-soft text-sm md:text-base leading-relaxed">Tus emociones y todo aquello que necesitas expresar.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-rose"><use href="#ic-heart-o"/></svg>
+              <span class="text-ink-soft text-sm md:text-base leading-relaxed">Los recuerdos, experiencias y momentos vividos con mamá.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-rose"><use href="#ic-heart-o"/></svg>
+              <span class="text-ink-soft text-sm md:text-base leading-relaxed">Lo que deseas agradecer, sanar, soltar o conservar de ella.</span>
+            </li>
+          </ul>
+          <p class="mt-5 text-ink-soft leading-[1.7]">Realizar estos ejercicios es una parte fundamental para elaborar el duelo.</p>
+          <p class="mt-3 text-ink-soft leading-[1.7]">A través de la escritura podrás ir procesando tus emociones, ordenando tus recuerdos y comprendiendo con mayor claridad lo que estás sintiendo.</p>
+        </div>
+      </div>
+
+      <div class="my-10 border-t border-dashed border-rose/30"></div>
+
+      <div class="md:flex md:items-start md:gap-8">
+        <div class="relative shrink-0 mx-auto md:mx-0 mb-6 md:mb-0 w-fit">
+          <span class="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-rose-pale text-wine shadow-soft">
+            <svg class="w-9 h-9 md:w-10 md:h-10"><use href="#ic-whatsapp"/></svg>
+          </span>
+          <svg class="absolute -left-4 -bottom-6 w-8 h-16 opacity-80 pointer-events-none hidden sm:block"><use href="#lavender-sprig"/></svg>
+        </div>
+        <div class="flex-1 text-center md:text-left">
+          <h3 class="font-display text-xl md:text-2xl text-plum mb-2">Acceso a un grupo privado de WhatsApp</h3>
+          <p class="text-ink-soft leading-[1.7]">
+            Un espacio privado y respetuoso en el que podrás sentirte acompañada por otras personas que también han perdido a su mamá y están atravesando un proceso similar al tuyo.
+          </p>
+          <p class="mt-4 font-semibold text-wine-darker">Dentro del grupo encontrarás:</p>
+          <ul class="mt-3 space-y-3 text-left">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-rose"><use href="#ic-heart-o"/></svg>
+              <span class="text-ink-soft text-sm md:text-base leading-relaxed">Acompañamiento emocional durante tu proceso.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-rose"><use href="#ic-heart-o"/></svg>
+              <span class="text-ink-soft text-sm md:text-base leading-relaxed">Reflexiones y herramientas para los días difíciles.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-rose"><use href="#ic-heart-o"/></svg>
+              <span class="text-ink-soft text-sm md:text-base leading-relaxed">Un espacio para compartir, expresarte y sentirte comprendida por personas que saben lo que significa vivir la pérdida de mamá.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing card -->
+    <div class="mt-16 relative bg-blush-light rounded-[28px] shadow-card p-8 md:p-10 text-center">
+      <div class="absolute -left-7 md:-left-8 top-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full bg-blush-light border-[6px] border-rose-pale shadow-soft flex items-center justify-center">
+        <svg class="w-6 h-6 md:w-7 md:h-7 text-pink-dark"><use href="#ic-heart"/></svg>
+      </div>
+      <p class="text-ink-soft text-sm uppercase tracking-[0.15em]">Todo esto por:</p>
+      <p class="mt-3 text-ink-soft/70 line-through text-lg">Precio normal: $30 USD</p>
+      <p class="mt-1 font-display text-pink-dark text-4xl md:text-5xl">$9 USD</p>
+      <p class="mt-1 text-xs uppercase tracking-[0.15em] text-rose">Precio especial de lanzamiento</p>
+      <div class="mt-5 pt-5 border-t border-rose-pale text-sm text-ink-soft space-y-1">
+        <p>Pago único.</p>
+        <p>Incluye la guía emocional, el cuaderno de ejercicios y el acceso al grupo privado de acompañamiento.</p>
+      </div>
+    </div>
+
+    <div class="mt-14 flex justify-center">
+      <svg class="w-5 h-5 text-wine-darker"><use href="#ic-heart"/></svg>
+    </div>
+    <div class="relative mt-3 text-center">
+      <svg class="hidden md:block absolute -left-6 top-0 w-10 h-24 opacity-70 pointer-events-none -rotate-12"><use href="#lavender-sprig"/></svg>
+      <p class="font-display text-lg md:text-xl text-plum font-semibold leading-relaxed">Tu duelo no necesita prisa.</p>
+      <p class="font-display italic text-lg md:text-xl text-rose leading-relaxed mt-1">Necesita espacio, comprensión y acompañamiento.</p>
+    </div>
+
+    <div class="mt-10 flex justify-center">
+      <a href="#kit" class="shine-btn max-w-md w-full sm:w-auto text-center inline-flex items-center justify-center gap-3 bg-gradient-to-r from-pink to-pink-dark text-blush-light font-semibold text-base md:text-lg px-8 py-5 rounded-2xl shadow-float hover:-translate-y-1 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink transition-transform duration-300 ease-spring leading-snug">
+        <svg class="w-5 h-5 shrink-0"><use href="#ic-heart-o"/></svg>
+        Quiero el kit de acompañamiento para el duelo de mamá
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BIOGRAFÍA ============ -->
+<section class="relative overflow-hidden bg-blush-light py-16 md:py-24">
+  <div class="relative max-w-3xl mx-auto px-6">
+    <div class="rounded-[28px] bg-white shadow-card p-6 md:p-10">
+      <div class="md:flex md:items-center md:gap-10">
+        <div class="mx-auto md:mx-0 w-48 sm:w-56 md:w-64 shrink-0 rounded-t-[999px] rounded-b-2xl overflow-hidden shadow-float bg-gradient-to-b from-blush-mid to-rose-pale/40 mb-8 md:mb-0">
+          <img src="brand_assets/foto_alpha.png" alt="Gabriela Haro" class="w-full h-auto object-cover object-top">
+        </div>
+        <div class="text-ink-soft leading-[1.7] text-sm md:text-base space-y-5">
+          <p>Soy la psicoterapeuta <strong class="text-wine font-semibold">Gabriela Haro</strong>, con más de 15 años de experiencia en el campo de la psicoterapia y el acompañamiento emocional.</p>
+          <p>Me he especializado principalmente en <strong class="text-wine font-semibold">tanatología y acompañamiento en procesos de pérdida y duelo</strong>, así como en heridas de la infancia, terapia familiar, liberación emocional y sanación energética. Esta preparación me permite brindar un acompañamiento integral, sensible y respetuoso, de acuerdo con las necesidades de cada persona.</p>
+          <p>Mi propósito es ofrecer herramientas que ayuden a las personas a comprender lo que están viviendo, procesar sus emociones y encontrar recursos internos para afrontar sus procesos de una manera más saludable. Quienes han trabajado conmigo han logrado experimentar cambios positivos, mejoría emocional y una mayor comprensión y conocimiento de sí mismas y de sus propios procesos.</p>
+        </div>
+      </div>
+      <div class="mt-8 pt-6 border-t border-rose-pale/60 flex justify-center">
+        <svg class="w-4 h-4 text-rose"><use href="#ic-heart-o"/></svg>
+      </div>
+    </div>
+  </div>
+</section>

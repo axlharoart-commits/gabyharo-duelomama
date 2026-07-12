@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -f \"/Users/macstudio/Documents/Mom /Landing page/preview_test.html\" \"/Users/macstudio/Documents/Mom /Landing page/button_ref_preview.mp4\" *)",
+      "Edit(index.html)"
+    ],
+    "additionalDirectories": [
+      "/Users/macstudio/Documents/Mom /Landing page"
+    ]
+  }
+}
