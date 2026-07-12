@@ -150,21 +150,35 @@
 
   <div class="relative max-w-3xl mx-auto px-6">
     <div class="relative rounded-[28px] bg-white shadow-float p-2 md:p-3">
-      <video id="vslVideo" class="w-full aspect-video block rounded-[22px]" controls playsinline autoplay muted preload="auto">
-        <source src="brand_assets/VSL.mp4" type="video/mp4">
-      </video>
+      <div class="relative w-full aspect-video rounded-[22px] overflow-hidden">
+        <div id="vslVideo" class="absolute inset-0 w-full h-full"></div>
+      </div>
       <button id="unmuteBtn" onclick="unmuteVSL(this)" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 inline-flex items-center gap-3 bg-white/95 text-ink font-semibold text-base md:text-xl px-7 py-4 md:px-9 md:py-5 rounded-full shadow-float hover:bg-white hover:scale-105 active:scale-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink transition-transform duration-300 ease-spring animate-pulse">
         🔊 Toca para activar el sonido
       </button>
     </div>
   </div>
 </section>
+<script src="https://www.youtube.com/iframe_api"></script>
 <script>
+  let vslPlayer;
+  function onYouTubeIframeAPIReady() {
+    vslPlayer = new YT.Player('vslVideo', {
+      videoId: 'MqvVoZPLhtM',
+      playerVars: {
+        autoplay: 1,
+        mute: 1,
+        playsinline: 1,
+        controls: 1,
+        rel: 0,
+        modestbranding: 1,
+      },
+    });
+  }
   function unmuteVSL(btn) {
-    const v = document.getElementById('vslVideo');
-    v.muted = false;
-    v.volume = 1;
-    v.play();
+    vslPlayer.unMute();
+    vslPlayer.setVolume(100);
+    vslPlayer.playVideo();
     btn.style.display = 'none';
   }
 </script>
