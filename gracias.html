@@ -122,21 +122,21 @@ fbq('track', 'PageView');
 <script>
 /* Evento de compra.
    Dos candados a propósito:
-   1. Solo dispara si vienen los parámetros que manda Stripe al redirigir. Así,
-      si alguien llega a esta página de casualidad, no se cuenta una venta falsa.
-   2. Solo dispara una vez por pago. Si el comprador recarga, Meta contaría dos
-      ventas donde hubo una. */
+   1. Solo dispara si la URL trae el código de pago que Stripe pone al redirigir
+      (session_id con forma cs_live_… o cs_test_…). Así, si alguien abre esta página
+      a mano o desde un link copiado, no se cuenta una venta falsa.
+   2. Solo dispara una vez por pago. Si el comprador recarga o la abre en otra
+      pestaña, Meta contaría dos ventas donde hubo una. */
 (function () {
   var q = new URLSearchParams(location.search);
   var valor  = parseFloat(q.get("v"));
   var moneda = (q.get("c") || "").toUpperCase();
-  if (!(valor > 0) || (moneda !== "MXN" && moneda !== "USD")) return;
-
   var sesion = q.get("session_id") || "";
-  var clave  = "gh:compra:" + moneda + ":" + valor + ":" + sesion;
-  var baul   = sesion ? window.localStorage : window.sessionStorage;
+  if (!(valor > 0) || (moneda !== "MXN" && moneda !== "USD")) return;
+  if (!/^cs_(live|test)_[A-Za-z0-9]+$/.test(sesion)) return;
 
-  try { if (baul.getItem(clave)) return; } catch (e) {}
+  var clave = "gh:compra:" + sesion;
+  try { if (window.localStorage.getItem(clave)) return; } catch (e) {}
 
   if (window.fbq) {
     fbq("track", "Purchase", {
@@ -144,9 +144,9 @@ fbq('track', 'PageView');
       currency: moneda,
       content_name: "Kit duelo de mamá",
       content_type: "product"
-    }, sesion ? { eventID: sesion } : undefined);
+    }, { eventID: sesion });
   }
-  try { baul.setItem(clave, "1"); } catch (e) {}
+  try { window.localStorage.setItem(clave, "1"); } catch (e) {}
 })();
 </script>
 </body>
