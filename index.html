@@ -182,15 +182,15 @@ fbq('track', 'PageView');
 <script>
   /* Link de pago de Stripe. Mientras esté vacío, los botones siguen bajando a #kit.
      En Stripe, "Después del pago" debe redirigir a:
-     https://gabyharo-duelomama.vercel.app/gracias.html?v=167&c=MXN&session_id={CHECKOUT_SESSION_ID}
-     Precio en Stripe: $167 MXN (México) / $9 USD (resto del mundo). */
+     https://gabyharo-duelomama.vercel.app/gracias.html?v=179&c=MXN&session_id={CHECKOUT_SESSION_ID}
+     Precio en Stripe: $179 MXN. */
   const CHECKOUT_URL = "https://buy.stripe.com/bJe6oI1rS0iw8UFeLbdZ600";
 
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a.shine-btn').forEach(a => {
       if (CHECKOUT_URL) a.href = CHECKOUT_URL;
       a.addEventListener('click', () => {
-        if (CHECKOUT_URL && window.fbq) fbq('track', 'InitiateCheckout', { value: 167, currency: 'MXN', content_name: 'Kit duelo de mamá' });
+        if (CHECKOUT_URL && window.fbq) fbq('track', 'InitiateCheckout', { value: 179, currency: 'MXN', content_name: 'Kit duelo de mamá' });
       });
     });
 
@@ -199,7 +199,7 @@ fbq('track', 'PageView');
     if (kit && 'IntersectionObserver' in window) {
       const io = new IntersectionObserver(entries => {
         if (entries.some(e => e.isIntersecting)) {
-          if (window.fbq) fbq('track', 'ViewContent', { content_name: 'Kit duelo de mamá', value: 167, currency: 'MXN' });
+          if (window.fbq) fbq('track', 'ViewContent', { content_name: 'Kit duelo de mamá', value: 179, currency: 'MXN' });
           io.disconnect();
         }
       });
@@ -331,9 +331,8 @@ fbq('track', 'PageView');
         <svg class="w-6 h-6 md:w-7 md:h-7 text-pink-dark"><use href="#ic-heart"/></svg>
       </div>
       <p class="text-ink-soft text-sm uppercase tracking-[0.15em]">Todo esto por:</p>
-      <p class="mt-3 text-ink-soft/70 line-through text-lg">Precio normal: $30 USD</p>
-      <p class="mt-1 font-display text-pink-dark text-4xl md:text-5xl">$9 USD</p>
-      <p class="mt-1 text-ink-soft text-sm">aprox. $167 MXN</p>
+      <p class="mt-3 text-ink-soft/70 line-through text-lg">Precio normal: $499 MXN</p>
+      <p class="mt-1 font-display text-pink-dark text-4xl md:text-5xl">$179 MXN</p>
       <p class="mt-1 text-xs uppercase tracking-[0.15em] text-rose">Precio especial de lanzamiento</p>
       <div class="mt-5 pt-5 border-t border-rose-pale text-sm text-ink-soft space-y-1">
         <p>Pago único.</p>
