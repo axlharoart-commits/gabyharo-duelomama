@@ -197,6 +197,12 @@ fbq('track', 'PageView');
       });
     });
 
+    // Contact: clic en "Escríbenos por WhatsApp" (dudas antes de comprar)
+    const wa = document.getElementById('whatsappDudas');
+    if (wa) wa.addEventListener('click', () => {
+      if (window.fbq) fbq('track', 'Contact', { content_name: 'Dudas kit duelo de mamá' });
+    });
+
     // ViewContent: una vez, cuando la persona llega a ver lo que incluye el kit
     const kit = document.getElementById('kit');
     if (kit && 'IntersectionObserver' in window) {
@@ -430,5 +436,13 @@ fbq('track', 'PageView');
       </a>
     </div>
     <p class="mt-4 text-center text-sm text-ink-soft">$179 MXN · pago único · acceso inmediato</p>
+
+    <div class="mt-12 pt-8 border-t border-rose/30 text-center">
+      <p class="text-ink-soft">¿Tienes otra duda?</p>
+      <a id="whatsappDudas" href="https://wa.me/525534850007?text=Hola%2C%20tengo%20una%20duda%20sobre%20el%20kit%20para%20el%20duelo%20de%20mam%C3%A1" target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-2 rounded-full bg-blush-light px-5 py-3 text-wine-darker font-semibold shadow-soft hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink transition-transform duration-300 ease-spring">
+        <svg class="w-5 h-5 text-wine"><use href="#ic-whatsapp"/></svg>
+        Escríbenos por WhatsApp
+      </a>
+    </div>
   </div>
 </section>
