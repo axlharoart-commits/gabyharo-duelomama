@@ -72,6 +72,9 @@ fbq('track', 'PageView');
     35% { transform: translateX(310%) skewX(-18deg); }
     100% { transform: translateX(310%) skewX(-18deg); }
   }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq .faq-icon { transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .faq[open] .faq-icon { transform: scale(1.2); }
   @keyframes pulse-grow {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.045); }
@@ -153,7 +156,7 @@ fbq('track', 'PageView');
   <div class="relative max-w-3xl mx-auto px-6">
     <div class="relative rounded-[28px] bg-white shadow-float p-2 md:p-3">
       <video id="vslVideo" class="w-full aspect-video block rounded-[22px]" controls playsinline autoplay muted preload="auto">
-        <source src="brand_assets/VSL2.mp4" type="video/mp4">
+        <source src="brand_assets/VSL2-web.mp4" type="video/mp4">
       </video>
       <button id="unmuteBtn" onclick="unmuteVSL(this)" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 inline-flex items-center gap-3 bg-white/95 text-ink font-semibold text-base md:text-xl px-7 py-4 md:px-9 md:py-5 rounded-full shadow-float hover:bg-white hover:scale-105 active:scale-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink transition-transform duration-300 ease-spring animate-pulse">
         🔊 Toca para activar el sonido
@@ -338,6 +341,10 @@ fbq('track', 'PageView');
         <p>Pago único.</p>
         <p>Incluye la guía emocional, el cuaderno de ejercicios y el acceso al grupo privado de acompañamiento.</p>
       </div>
+      <ul class="mt-5 flex flex-col sm:flex-row sm:justify-center gap-2 sm:gap-6 text-sm text-wine-darker font-semibold">
+        <li class="inline-flex items-center justify-center gap-2"><svg class="w-4 h-4 text-pink-dark"><use href="#ic-check"/></svg>Acceso inmediato después del pago</li>
+        <li class="inline-flex items-center justify-center gap-2"><svg class="w-4 h-4 text-pink-dark"><use href="#ic-check"/></svg>Pago seguro con Stripe</li>
+      </ul>
     </div>
 
     <div class="mt-14 flex justify-center">
@@ -355,6 +362,7 @@ fbq('track', 'PageView');
         Quiero el kit de acompañamiento para el duelo de mamá
       </a>
     </div>
+    <p class="mt-4 text-center text-sm text-ink-soft">Creado por la <strong class="text-wine font-semibold">Psic. Gabriela Haro</strong> · Psicoterapeuta y tanatóloga con más de 15 años de experiencia</p>
   </div>
 </section>
 
@@ -376,5 +384,51 @@ fbq('track', 'PageView');
         <svg class="w-4 h-4 text-rose"><use href="#ic-heart-o"/></svg>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ PREGUNTAS FRECUENTES ============ -->
+<section class="relative overflow-hidden bg-blush-mid py-16 md:py-24">
+  <div class="relative max-w-2xl mx-auto px-6">
+    <div class="flex items-center justify-center gap-4 mb-10">
+      <span class="h-px w-10 md:w-16 bg-rose/40"></span>
+      <h2 class="font-display text-2xl md:text-3xl text-plum text-center tracking-[-0.02em]">Preguntas frecuentes</h2>
+      <span class="h-px w-10 md:w-16 bg-rose/40"></span>
+    </div>
+
+    <div class="space-y-3">
+      <details class="faq group rounded-2xl bg-blush-light shadow-soft p-5 md:p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-wine-darker focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink rounded-lg">¿Y si todavía no siento que es el momento?<svg class="faq-icon w-5 h-5 shrink-0 text-rose"><use href="#ic-heart-o"/></svg></summary>
+        <p class="mt-3 text-ink-soft leading-[1.7]">No hay un momento perfecto para empezar. El material está pensado para usarse a tu ritmo: puedes leer, pausar y volver a él cada vez que lo necesites.</p>
+      </details>
+      <details class="faq group rounded-2xl bg-blush-light shadow-soft p-5 md:p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-wine-darker focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink rounded-lg">¿Tengo que participar en el grupo de WhatsApp?<svg class="faq-icon w-5 h-5 shrink-0 text-rose"><use href="#ic-heart-o"/></svg></summary>
+        <p class="mt-3 text-ink-soft leading-[1.7]">No. Puedes solo leer; escribir es opcional. Es un espacio privado y respetuoso donde te acompaño junto a otras personas que atraviesan el mismo duelo.</p>
+      </details>
+      <details class="faq group rounded-2xl bg-blush-light shadow-soft p-5 md:p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-wine-darker focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink rounded-lg">¿Es solo un PDF?<svg class="faq-icon w-5 h-5 shrink-0 text-rose"><use href="#ic-heart-o"/></svg></summary>
+        <p class="mt-3 text-ink-soft leading-[1.7]">No. Es un acompañamiento: una guía para comprender lo que estás viviendo, un cuaderno de trabajo con ejercicios para expresarlo por escrito y un grupo privado donde estoy presente.</p>
+      </details>
+      <details class="faq group rounded-2xl bg-blush-light shadow-soft p-5 md:p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-wine-darker focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink rounded-lg">¿Cómo recibo el material?<svg class="faq-icon w-5 h-5 shrink-0 text-rose"><use href="#ic-heart-o"/></svg></summary>
+        <p class="mt-3 text-ink-soft leading-[1.7]">En cuanto pagas, llegas a una página con el enlace para descargar la guía y el cuaderno, y para unirte al grupo. El acceso es inmediato.</p>
+      </details>
+      <details class="faq group rounded-2xl bg-blush-light shadow-soft p-5 md:p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-wine-darker focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink rounded-lg">¿El pago es seguro?<svg class="faq-icon w-5 h-5 shrink-0 text-rose"><use href="#ic-heart-o"/></svg></summary>
+        <p class="mt-3 text-ink-soft leading-[1.7]">Sí. El pago se procesa con Stripe, una de las plataformas de pago más usadas en el mundo, con tarjeta de crédito o débito.</p>
+      </details>
+      <details class="faq group rounded-2xl bg-blush-light shadow-soft p-5 md:p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-wine-darker focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink rounded-lg">¿Sustituye una terapia?<svg class="faq-icon w-5 h-5 shrink-0 text-rose"><use href="#ic-heart-o"/></svg></summary>
+        <p class="mt-3 text-ink-soft leading-[1.7]">No. Es un acompañamiento para transitar el duelo con más contención. Si sientes que necesitas una atención más personal, te recomiendo buscar apoyo profesional.</p>
+      </details>
+    </div>
+
+    <div class="mt-12 flex justify-center">
+      <a href="#kit" class="shine-btn max-w-md w-full sm:w-auto text-center inline-flex items-center justify-center gap-3 bg-gradient-to-r from-pink to-pink-dark text-blush-light font-semibold text-base md:text-lg px-8 py-5 rounded-2xl shadow-float hover:-translate-y-1 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink transition-transform duration-300 ease-spring leading-snug">
+        <svg class="w-5 h-5 shrink-0"><use href="#ic-heart-o"/></svg>
+        Quiero el kit de acompañamiento para el duelo de mamá
+      </a>
+    </div>
+    <p class="mt-4 text-center text-sm text-ink-soft">$179 MXN · pago único · acceso inmediato</p>
   </div>
 </section>

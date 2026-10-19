@@ -40,6 +40,13 @@ Single-scroll VSL landing page — **no header/nav**, pure top-to-bottom scroll 
 - `brand_assets/button_ref.mov` — reference video used once to reverse-engineer the CTA shine animation; already implemented in CSS, file not otherwise needed.
 - `vid.mp4` (project root) — unused leftover, not referenced anywhere in `index.html`. Leave in place unless user asks to remove it.
 
+## Cambios de conversión (19 oct 2026)
+- Video: la landing usa `brand_assets/VSL2-web.mp4` (720p, ~12 MB, faststart). `VSL2.mp4` (78 MB) se conserva pero ya no se carga.
+- Tarjeta de precio: $179 MXN (tachado $499 MXN) + "Acceso inmediato después del pago" y "Pago seguro con Stripe".
+- Debajo del segundo botón: firma "Creado por la Psic. Gabriela Haro · Psicoterapeuta y tanatóloga con más de 15 años de experiencia".
+- Nueva sección al final: "Preguntas frecuentes" (6 preguntas en `<details>`) + tercer botón idéntico a los otros dos.
+- Los botones `.shine-btn` toman el link de Stripe desde `CHECKOUT_URL` (script del pixel).
+
 ## Pending
 - Nothing currently requested/outstanding.
 
